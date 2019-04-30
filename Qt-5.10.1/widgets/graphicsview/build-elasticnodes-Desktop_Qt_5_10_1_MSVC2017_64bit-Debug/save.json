@@ -1,0 +1,83 @@
+{
+    "root": {
+        "children": [
+            {
+                "children": [
+                ],
+                "data": {
+                    "endFrame": 800,
+                    "loopFlag": true,
+                    "startFrame": 1,
+                    "timeScale": 1,
+                    "url": "talk.fbx"
+                },
+                "id": "idleTalk1",
+                "type": "clip"
+            },
+            {
+                "children": [
+                ],
+                "data": {
+                    "endFrame": 501,
+                    "loopFlag": true,
+                    "startFrame": 1,
+                    "timeScale": 1,
+                    "url": "talk_righthand.fbx"
+                },
+                "id": "idleTalk2",
+                "type": "clip"
+            },
+            {
+                "children": [
+                ],
+                "data": {
+                    "endFrame": 499,
+                    "loopFlag": true,
+                    "startFrame": 1,
+                    "timeScale": 1,
+                    "url": "talk04.fbx"
+                },
+                "id": "idleTalk3",
+                "type": "clip"
+            }
+        ],
+        "data": {
+            "currentState": "idleTalk1",
+            "randomSwitchTimeMax": 10,
+            "randomSwitchTimeMin": 5,
+            "states": [
+                {
+                    "id": "idleTalk1",
+                    "interpDuration": 15,
+                    "interpTarget": 6,
+                    "priority": 0.33,
+                    "resume": true,
+                    "transitions": [
+                    ]
+                },
+                {
+                    "id": "idleTalk2",
+                    "interpDuration": 15,
+                    "interpTarget": 6,
+                    "priority": 0.33,
+                    "resume": true,
+                    "transitions": [
+                    ]
+                },
+                {
+                    "id": "idleTalk3",
+                    "interpDuration": 15,
+                    "interpTarget": 6,
+                    "priority": 0.33,
+                    "resume": true,
+                    "transitions": [
+                    ]
+                }
+            ],
+            "triggerRandomSwitch": "idleTalkSwitch"
+        },
+        "id": "idleTalk",
+        "type": "randomSwitchStateMachine"
+    },
+    "version": "1.1"
+}
