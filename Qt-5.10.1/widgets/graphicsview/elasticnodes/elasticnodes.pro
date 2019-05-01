@@ -5,7 +5,8 @@ HEADERS += \
         node.h \
         graphwidget.h \
     animNode.h \
-    game.h
+    game.h \
+    diagramtextitem.h
 
 SOURCES += \
         edge.cpp \
@@ -13,7 +14,8 @@ SOURCES += \
         node.cpp \
         graphwidget.cpp \
     animNode.cpp \
-    game.cpp
+    game.cpp \
+    diagramtextitem.cpp
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/graphicsview/elasticnodes

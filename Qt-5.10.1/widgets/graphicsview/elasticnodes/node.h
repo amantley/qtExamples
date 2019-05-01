@@ -53,6 +53,7 @@
 
 #include <QGraphicsItem>
 #include <QList>
+#include "diagramtextitem.h"
 
 class Edge;
 class GraphWidget;
@@ -74,6 +75,7 @@ public:
 
     void calculateForces();
     bool advance();
+    void setLabel();
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
@@ -89,6 +91,7 @@ private:
     QList<Edge *> edgeList;
     QPointF newPos;
     GraphWidget *graph;
+    DiagramTextItem* mLabel;
 };
 //! [0]
 

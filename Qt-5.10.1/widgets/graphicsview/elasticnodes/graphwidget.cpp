@@ -87,7 +87,8 @@ GraphWidget::GraphWidget(QWidget *parent)
         QTextStream(stdout) << "not game save\n";
     }
 //! [0]
-
+    mLabel = new QGraphicsSimpleTextItem("hello world");
+    scene->addItem(mLabel);
 //! [1]
 //!
    /*

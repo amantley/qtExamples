@@ -118,11 +118,13 @@ int AnimNode::read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* 
     QPointF ppos = parent->pos();
     mNode->setPos(ppos.x(),ppos.y() + 10);
 
-
-
-    if (json.contains("id") && json["id"].isString())
+    if (json.contains("id") && json["id"].isString()){
         mID = json["id"].toString();
+        mNode->setLabel();
+    }
 
+    //QGraphicsSimpleTextItem* mLabel2 = new QGraphicsSimpleTextItem("found a string");
+    //scene->addItem(mLabel2);
     //mLabel->setText(json["id"].toString());
     //mLabel->acceptTouchEvents();
 

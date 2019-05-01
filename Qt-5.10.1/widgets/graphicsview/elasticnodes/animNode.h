@@ -57,7 +57,7 @@
 #include <QString>
 #include <QGraphicsView>
 #include "node.h"
-#include <QGraphicsSimpleTextItem>
+
 
 //! [0]
 class AnimNode
@@ -94,13 +94,15 @@ public:
 
     void print(int indentation = 0) const;
 
+
 private:
     QString mID;
     NodeType mNodeType;
     QJsonObject mData;
     QJsonArray mChildren;
     Node* mNode;
-    //QGraphicsSimpleTextItem* mLabel;
+    //QGraphicsSimpleTextItemPrivate* mLabel;
+
 };
 //! [0]
 

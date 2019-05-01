@@ -83,6 +83,7 @@ protected:
 private:
     int timerId;
     Node *centerNode;
+    QGraphicsSimpleTextItem* mLabel;
 };
 //! [0]
 
