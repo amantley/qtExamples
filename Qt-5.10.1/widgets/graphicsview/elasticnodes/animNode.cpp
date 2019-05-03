@@ -110,17 +110,17 @@ void AnimNode::setNodeType(AnimNode::NodeType nodeType)
 }
 
 //! [0]
-int AnimNode::read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* widget, Node* parent)
+int AnimNode::read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* widget, Node* parent, float parentX, float parentY)
 {
     mNode = new Node(widget);
     scene->addItem(mNode);
     scene->addItem(new Edge(mNode, parent));
-    QPointF ppos = parent->pos();
-    mNode->setPos(ppos.x(),ppos.y() + 10);
+    QPointF ppos(parentX,parentY);
+    mNode->setPos(ppos);
 
     if (json.contains("id") && json["id"].isString()){
         mID = json["id"].toString();
-        mNode->setLabel();
+        mNode->setLabel(mID);
     }
 
     //QGraphicsSimpleTextItem* mLabel2 = new QGraphicsSimpleTextItem("found a string");
@@ -151,7 +151,8 @@ int AnimNode::read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* 
     for (int childIndex = 0; childIndex < mChildren.size(); ++childIndex) {
         QJsonObject childObject = mChildren[childIndex].toObject();
         AnimNode child;
-        childCount += child.read(childObject, scene, widget, parent);
+        float childX = parentX - (mChildren.size()/2) * 50.0;
+        childCount += child.read(childObject, scene, widget, mNode, childX + childIndex*50, parentY + 50);
         //childCount++;
         //mNpcs.append(npc);
     }

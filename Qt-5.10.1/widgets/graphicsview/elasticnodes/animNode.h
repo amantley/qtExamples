@@ -89,7 +89,7 @@ public:
     NodeType getNodeType() const;
     void setNodeType(NodeType nodeType);
 
-    int read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* widget, Node* parent);
+    int read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* widget, Node* parent, float parentX, float parentY);
     void write(QJsonObject &json) const;
 
     void print(int indentation = 0) const;

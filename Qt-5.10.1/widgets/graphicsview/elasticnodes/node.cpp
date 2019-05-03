@@ -78,14 +78,15 @@ QList<Edge *> Node::edges() const
     return edgeList;
 }
 
-void Node::setLabel(){
+void Node::setLabel(QString label){
     mLabel = new DiagramTextItem(this);
+    mLabel->setPlainText(label);
 }
 
 
 void Node::calculateForces()
 {
-    if (!scene() || scene()->mouseGrabberItem() == this) {
+    if (!scene() || scene()->mouseGrabberItem() == this || newPos != pos()) {
         newPos = pos();
         return;
     }

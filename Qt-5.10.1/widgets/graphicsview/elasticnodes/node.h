@@ -75,7 +75,7 @@ public:
 
     void calculateForces();
     bool advance();
-    void setLabel();
+    void setLabel(QString label);
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;

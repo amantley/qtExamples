@@ -87,8 +87,8 @@ GraphWidget::GraphWidget(QWidget *parent)
         QTextStream(stdout) << "not game save\n";
     }
 //! [0]
-    mLabel = new QGraphicsSimpleTextItem("hello world");
-    scene->addItem(mLabel);
+    //mLabel = new QGraphicsSimpleTextItem("hello world");
+    centerNode->setLabel("Graph Origin");
 //! [1]
 //!
    /*
@@ -241,8 +241,11 @@ void GraphWidget::drawBackground(QPainter *painter, const QRectF &rect)
     // Text
     QRectF textRect(sceneRect.left() + 4, sceneRect.top() + 4,
                     sceneRect.width() - 4, sceneRect.height() - 4);
-    QString message(tr("Click and drag the nodes around, and zoom with the mouse "
-                       "wheel or the '+' and '-' keys"));
+    QString message(tr("Animation Graph Editor:"));
+
+    QRectF textRect2(sceneRect.left() + 4, sceneRect.top() + 30,
+                    sceneRect.width() - 4, sceneRect.height() - 4);
+    QString message2(tr("zoom with the mouse wheel or the '+' and '-' keys"));
 
     QFont font = painter->font();
     font.setBold(true);
@@ -252,6 +255,10 @@ void GraphWidget::drawBackground(QPainter *painter, const QRectF &rect)
     painter->drawText(textRect.translated(2, 2), message);
     painter->setPen(Qt::black);
     painter->drawText(textRect, message);
+    font.setBold(false);
+    font.setPointSize(8);
+    painter->setFont(font);
+    painter->drawText(textRect2, message2);
 }
 //! [6]
 
