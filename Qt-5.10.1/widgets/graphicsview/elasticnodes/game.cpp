@@ -74,7 +74,7 @@ void Game::newGame()
 bool Game::loadGame(Game::SaveFormat saveFormat, QGraphicsScene* scene, GraphWidget* widget, Node* center)
 {
     QFile loadFile(saveFormat == Json
-        ? QStringLiteral("animTest.json")
+        ? QStringLiteral("avatar-animation.json")
         : QStringLiteral("save.dat"));
 
     if (!loadFile.open(QIODevice::ReadOnly)) {
@@ -131,7 +131,7 @@ void Game::read(const QJsonObject &json, QGraphicsScene* scene, GraphWidget* wid
     }
     if (json.contains("root") && json["root"].isObject()){
         QTextStream(stdout) << "anim random\n";
-        totalNodes = mAnimNode.read(json["root"].toObject(), scene, widget, center, 0, 30);
+        totalNodes = mAnimNode.read(json["root"].toObject(), scene, widget, center, -50, -350);
     }
 
     QTextStream(stdout) << "total number of nodes in graph is: " << totalNodes << "\n";
